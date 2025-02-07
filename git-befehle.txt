@@ -1,0 +1,110 @@
+#1. Git-Konfiguration und Grundeinstellungen :
+
+
+git config --global user.name "Ihr Name"  # Benutzername festlegen
+git config --global user.email "email@example.com"  # E-Mail-Adresse festlegen
+git config --list  # Aktuelle Git-Konfiguration anzeigen
+git config --global core.editor "vim"  # Standard-Editor festlegen
+
+
+#2. Repository-Verwaltung :
+
+
+git init  # Neues Git-Repository erstellen
+git clone <repo_url>  # Bestehendes Repository klonen
+git remote add origin <url>  # Entferntes Repository hinzufügen
+git remote -v  # Liste der entfernten Repositories anzeigen
+git remote remove <remote_name>  # Entferntes Repository entfernen
+
+
+#3. Änderungen verfolgen und verwalten :
+
+
+git status  # Status des Arbeitsbereichs anzeigen
+git add <dateiname>  # Datei zur Staging-Area hinzufügen
+git add .  # Alle Änderungen hinzufügen
+git reset <dateiname>  # Datei aus der Staging-Area entfernen
+git reset --hard  # Alle Änderungen verwerfen
+
+
+#4. Commit-Operationen :
+
+
+git commit -m "Commit-Nachricht"  # Änderungen committen
+git commit --amend -m "Neue Nachricht"  # Letzte Commit-Nachricht ändern
+git commit --no-edit --amend  # Letzten Commit aktualisieren, aber Nachricht beibehalten
+
+
+#5. Änderungen überprüfen und vergleichen :
+
+
+git diff  # Unterschiede der Arbeitskopie anzeigen
+git diff --staged  # Unterschiede in der Staging-Area anzeigen
+git log  # Commit-Verlauf anzeigen
+git log --oneline  # Kurzfassung des Commit-Verlaufs anzeigen
+git log --graph --all --decorate --oneline  # Grafische Darstellung des Commit-Verlaufs
+
+
+#6. Branch-Management (Zweigverwaltung) :
+
+
+git branch  # Liste aller Branches anzeigen
+git branch <neuer_branch>  # Neuen Branch erstellen
+git checkout <branch_name>  # Branch wechseln
+git checkout -b <neuer_branch>  # Neuen Branch erstellen und wechseln
+git branch -d <branch_name>  # Branch löschen
+git branch -D <branch_name>  # Branch zwangsweise löschen
+
+
+#7. Branches zusammenführen (Merge) :
+
+git merge <branch_name>  # Branch in den aktuellen Branch mergen
+git merge --abort  # Merge-Vorgang abbrechen
+
+
+#8. Rebasing (Commits neu organisieren) :
+
+
+git rebase <branch_name>  # Commit-Verlauf neu organisieren
+git rebase --abort  # Rebase-Vorgang abbrechen
+git rebase --continue  # Nach Konfliktlösung fortsetzen
+
+
+#9. Änderungen in das entfernte Repository übertragen und aktualisieren :
+
+git push origin <branch_name>  # Änderungen ins entfernte Repository pushen
+git push -u origin <branch_name>  # Änderungen pushen und Tracking setzen
+git push --force  # Änderungen zwangsweise pushen
+git fetch  # Änderungen vom entfernten Repository abrufen
+git pull  # Neueste Änderungen vom entfernten Repository abrufen und mergen
+
+
+
+#10. Tags verwalten :
+
+git tag <tag_name>  # Tag für einen Commit setzen
+git tag -a <tag_name> -m "Beschreibung"  # Annotiertes Tag mit Beschreibung erstellen
+git tag  # Liste aller Tags anzeigen
+git push origin <tag_name>  # Tag ins entfernte Repository pushen
+git push --tags  # Alle Tags pushen
+git tag -d <tag_name>  # Tag lokal löschen
+git push origin --delete <tag_name>  # Entferntes Tag löschen
+
+
+#11. Änderungen rückgängig machen :
+
+git reset --hard HEAD~1  # Letzten Commit löschen
+git revert HEAD  # Letzten Commit rückgängig machen (aber Verlauf beibehalten)
+git checkout <commit_id>  # Zu einem bestimmten Commit wechseln
+git cherry-pick <commit_id>  # Einen bestimmten Commit in aktuellen Branch übernehmen
+
+
+#12. Submodule (Untergeordnete Repositories) :
+
+
+git submodule add <repo_url> <ordner_name>  # Submodul hinzufügen
+git submodule update --init --recursive  # Submodule aktualisieren
+git submodule foreach git pull origin master  # Alle Submodule aktualisieren
+
+
+Diese Git-Befehle decken fast alle wichtigen Git-Aktionen ab. Viel Erfolg mit Git! 🚀

@@ -1,0 +1,98 @@
+#1. Git Yapılandırma ve Genel Ayarlar:
+
+git config --global user.name "Adınız"
+git config --global user.email "email@example.com"
+git config --list  # Mevcut ayarları gösterir.
+git config --global core.editor "vim"  # Varsayılan düzenleyiciyi ayarlar.
+
+#2. Depo (Repository) Yönetimi:
+
+git init  # Yeni bir Git deposu oluşturur.
+git clone <repo_url>  # Mevcut bir Git deposunu klonlar.
+git remote add origin <url>  # Uzaktaki repo ekler.
+git remote -v  # Tanımlı uzak repoları gösterir.
+git remote remove <remote_name>  # Uzaktaki repoyu kaldırır.
+
+
+#3. Değişiklikleri İzleme ve İşleme:
+
+git status  # Çalışma alanının durumunu gösterir.
+git add <dosya_adı>  # Dosyayı izlemeye ekler (staging).
+git add .  # Tüm değişiklikleri ekler.
+git reset <dosya_adı>  # Dosyayı sahneden (staging) kaldırır.
+git reset --hard  # Tüm değişiklikleri geri alır.
+
+
+#4. Commit İşlemleri
+
+git commit -m "Commit mesajı"  # Staging alanındaki değişiklikleri kaydeder.
+git commit --amend -m "Yeni mesaj"  # Son commit mesajını değiştirir.
+git commit --no-edit --amend  # Son commit'e ekleme yapar ama mesajı değiştirmez.
+
+
+#5. Değişiklikleri İnceleme ve Karşılaştırma:
+
+git diff  # Çalışma alanındaki değişiklikleri gösterir.
+git diff --staged  # Staging alanındaki değişiklikleri gösterir.
+git log  # Commit geçmişini gösterir
+git log --oneline  # Kısa commit geçmişi.
+git log --graph --all --decorate --oneline  # Görsel commit geçmişi.
+
+
+#6. Dallanma (Branch) İşlemleri:
+
+git branch  # Mevcut branchleri listeler
+git branch <yeni_branch>  # Yeni bir branch oluşturur
+git checkout <branch_adı>  # Branch değiştirir
+git checkout -b <yeni_branch>  # Yeni branch oluşturup geçiş yapar
+git branch -d <branch_adı>  # Branch siler
+git branch -D <branch_adı>  # Zorla branch siler
+
+
+#7. Birleştirme (Merge) İşlemleri:
+
+git merge <branch_adı>  # Belirtilen branch'i mevcut branch'e birleştirir
+git merge --abort  # Merge işlemini iptal eder
+
+
+#8. Rebasing (Commitleri Yeniden Düzenleme):
+
+git rebase <branch_adı>  # Commit geçmişini düzenler
+git rebase --abort  # Rebase işlemini iptal eder
+git rebase --continue  # Çakışmayı çözüp devam eder
+
+
+#9. Uzak Depoya Gönderme ve Güncelleme:
+
+git push origin <branch_adı>  # Değişiklikleri uzak depoya gönderir
+git push -u origin <branch_adı>  # Branch’i takip ederek uzak depoya gönderir
+git push --force  # Zorla uzak depoya gönderme
+git fetch  # Uzak depodaki değişiklikleri alır
+git pull  # Uzak depodan en son değişiklikleri çeker ve birleştirir
+
+
+#10. Etiketleme (Tag):
+
+git tag <tag_adı>  # Commit’e etiket ekler
+git tag -a <tag_adı> -m "Açıklama"  # Açıklamalı etiket oluşturur
+git tag  # Tüm etiketleri listeler
+git push origin <tag_adı>  # Etiketi uzak depoya gönderir
+git push --tags  # Tüm etiketleri gönderir
+git tag -d <tag_adı>  # Etiketi siler
+git push origin --delete <tag_adı>  # Uzak etiketi siler
+
+
+#11. Geçmişi Geri Alma:
+
+git reset --hard HEAD~1  # Son commit'i siler
+git revert HEAD  # Son commit’i geri alır ama geçmişi korur
+git checkout <commit_id>  # Geçmiş bir commit’e gider
+git cherry-pick <commit_id>  # Belirtilen commit'i mevcut branch'e ekler
+
+#12. Submodule (Alt Modüller):
+
+git submodule add <repo_url> <klasör_adı>  # Alt modül ekler
+git submodule update --init --recursive  # Alt modülleri günceller
+git submodule foreach git pull origin master  # Tüm alt modülleri günceller
+
+Bu komutlar, Git ile ilgili çoğu işlemi yapmanı sağlar. Özellikle iş akışına uygun olanları ezberleyip kullanabilirsin! 🚀s
