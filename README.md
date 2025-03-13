@@ -1,11 +1,11 @@
 # Git Befehle :
 
-Hier sind alle Git-Befehle mit ihren Erklärungen auf Türkisch und Deutsch.
+Hier sind alle Git-Befehle mit ihren Erklärungen auf Türkisch ,auf Deutsch und auf Englisch.
 
 ------
 # Git Komutları :
 
-Burada Git Komutlarının hepsi Almanca ve Türkçe olarak mevcuttur.
+Burada Git Komutlarının hepsi Almanca, Türkçe ve İngilizce olarak mevcuttur.
 
 ------
 # Git Commands:
